@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moonpie Order</title>
+</head>
+<body>
+<form name="Moonpies" action="success.html" method="post">
+<div>
+<label>Type of Moonpie</label>
+<select name="Type of Moonpie">
+	<option value="Chocolate">Chocolate</option>
+	<option value="Vanilla">Vanilla</option>
+	<option value="Strawberry">Strawberry</option>
+</select>
+</div>
+<div>
+<label>Delivery Instructions:</label>
+<p>
+<textarea name="Delivery Instructions"></textarea>
+</p>
+</div>
+<div>
+<input type="checkbox" name="cbagree" value="agree">
+Is this a gift?
+</div>
+<div>
+<fieldset>
+	<legend>Moonpie Size</legend>
+	<p>
+	<label>
+	<input type="radio" name="size" value="Small">Small
+	</label>
+	</p>
+	<p>
+	<label>
+	<input type="radio" name="size" value="Large">Large
+	</label>
+	</p>
+</fieldset>
+</div>
+<div>
+	<label>Choose a Date</label>
+	<input type="date" name="date">
+</div>
+<div>
+	<button type="submit">Submit Order</button>
+</div>
+</form>
+</body>
+</html>
