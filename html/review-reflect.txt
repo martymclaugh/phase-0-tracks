@@ -1,0 +1,29 @@
+1.
+
+-Client - Is your computer you are using to access the webpage.
+-Server - Another computer that contains what you are looking for.
+-Render - processes information so that it can be readable by you.
+
+2. HTML is a language used to create websites.
+
+-Tag - different segments of code that can change the way something is viewed
+-Element - a start tag, an end tag, and everything in-between.
+-Node - everything in an html file, each thing is a different type of node.
+-Attribute - modifies the html element. It is inside of the start tag and can do things such as create a certain type of button, link text to another page/URL etc…
+-Block element - highlights an entire block to make it stand out from the rest.
+-Inline element - highlights just a part of a block to make it stand out from the rest.
+
+3.
+-head - creates a header at the top of the page
+-body - main segment of information in the page
+-p - starts a new paragraph or line
+-form - creates a form with inputs
+-div - creates a division in the page
+-span - used to create an inline element in the page
+-select - creates a list of options which can be selected by the user
+-h2 - second largest header
+-ol - creates an ordered list
+-ul - creates an unordered list
+-table - creates a table via rows and columns
+-tr - inputs to a table row
+-td - table data to be inserted in the table
