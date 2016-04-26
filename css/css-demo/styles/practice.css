@@ -10,3 +10,9 @@ section#contact-info {
 .list {
 	font-size: .8em;
 }
+.job:hover {
+	background-color: red;
+}
+section li {
+	font-style: italic;
+}
