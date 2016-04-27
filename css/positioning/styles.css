@@ -1,0 +1,29 @@
+.set {
+	position: relative;
+}
+
+#hat {
+	position: absolute;
+	margin-top:100px; 
+	margin-right:800px;
+	margin-bottom:;
+	margin-left:-430px;
+	z-index: 3;
+}
+#glasses {
+	position: absolute;
+	margin-top: 298px;
+	margin-right: 800px;
+	margin-left: -370px;
+	z-index: 2;
+}
+#octopus {
+	position: relative;
+	margin-top: 200px;
+	margin-right:200px;
+	margin-bottom: 300px;
+	margin-left: 500px;
+	z-index: 1;
+	
+}
+
