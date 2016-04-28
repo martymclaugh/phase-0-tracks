@@ -10,7 +10,7 @@
 }
 #hat {
 	width: 276px;
-	top: 
+	top: -350px;
 	left: 0;
 	right: 0;
 	position: relative;
@@ -21,6 +21,7 @@
 }
 #glasses {
 	width: 135px;
+	top: -353px;
 	left: 0;
 	right: 0;
 	display: block;
