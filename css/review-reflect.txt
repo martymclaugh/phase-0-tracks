@@ -1,0 +1,14 @@
+1.
+-background
+-font
+-text
+
+2. external, internal, and inline. I would say external is the best to use that way you can work on it separately without jeopardizing the html you wrote.
+
+3. Selectors are different ways to style sections of the html. 
+-ID
+-Class
+-HTML Tag 
+4. The box model is what wraps around the html element. It consists of the margin, border, padding, and content.
+5. The cascading effect is essential how css is read from top to bottom. Some commands will take priority over others.
+6. viewport and media queries.
