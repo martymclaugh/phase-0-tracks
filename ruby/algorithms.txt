@@ -1,6 +1,8 @@
--Wait for human to speak desired floor
+Elevator Algorithm:
+
+-Wait for human to speak desired floor.
 -If human speaks an integer:
-	-Go to elevator panel and hover over any button
+	-Go to elevator panel and hover over any button.
 	-Move up to the highest button.
 	-Move to the most left button.
 	-Until hovering over desired integer:
@@ -10,3 +12,24 @@
 		-Move down one button
 	-Push button.
 -Otherwise say “Must kill all humans.”
+
+Tinder Algorithm:
+
+-Take phone out of pocket.
+-Open Tinder App.
+-If you have no matches:
+	-Put on heart rate monitor.
+	-Until heart rate elevates by at least 10 BPM:
+		-Swipe left.
+	-If heart rate is elevated by at least 10 BPM:
+		-Click on profile.
+		-Scroll through pictures.
+		-Read the two sentences they have written.
+	-Swipe right.
+-Otherwise:
+	-Open chat with match.
+	-Type “Do you think Daredevil believes in love at first sight?"
+	-Press send.
+	-Close app.
+	-Wait for witty response.
+	
