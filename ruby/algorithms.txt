@@ -1,0 +1,12 @@
+-Wait for human to speak desired floor
+-If human speaks an integer:
+	-Go to elevator panel and hover over any button
+	-Move up to the highest button.
+	-Move to the most left button.
+	-Until hovering over desired integer:
+		-Move to the most right button hovering over each button in its path
+		-Move down one button
+		-Move to the most left button hovering over each button in its path
+		-Move down one button
+	-Push button.
+-Otherwise say “Must kill all humans.”
