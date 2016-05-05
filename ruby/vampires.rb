@@ -11,7 +11,7 @@ until employees == 0
 	garlic_bread = gets.chomp
 	puts "Would you like to enroll in the company’s health insurance?"
 	health_insurance = gets.chomp
-
+	
 	if garlic_bread == "yes" || garlic_bread == "Yes" || garlic_bread == "Y"
 		garlic_bread = "y"
 	else
@@ -49,6 +49,21 @@ until employees == 0
 	if vampresult == nil
 		vampresult = "Results inconclusive."
 	end
+
+	puts "Are you allergic to anything?"
+	allergies = gets.chomp
+	if allergies == "no" || allergies == "No" || allergies == "n"
+		allergies = "n"
+	end
+	until allergies == "n"
+		puts "Are you allergic to anything?"
+		allergies = gets.chomp
+		if allergies == "sunshine"
+			vampresult = "Probably a vampire."
+		break
+		end
+	end
+
 	puts vampresult
 	employees = employees - 1
 end
