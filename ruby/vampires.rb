@@ -52,12 +52,12 @@ until employees == 0
 
 	puts "Are you allergic to anything?"
 	allergies = gets.chomp
-	if allergies == "no" || allergies == "No" || allergies == "n"
-		allergies = "n"
-	end
 	until allergies == "n"
 		puts "Are you allergic to anything?"
 		allergies = gets.chomp
+		if allergies == "no" || allergies == "No" || allergies == "N"
+			allergies = "n"
+		end
 		if allergies == "sunshine"
 			vampresult = "Probably a vampire."
 		break
@@ -67,3 +67,4 @@ until employees == 0
 	puts vampresult
 	employees = employees - 1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
