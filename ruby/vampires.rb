@@ -1,9 +1,3 @@
-name = 
-age = 
-yob = 
-garlic_bread =
-health_insurance = 
-age_correct = 
  puts "What is your name?"
  name = gets.chomp
  puts "How old are you?"
@@ -15,32 +9,45 @@ age_correct =
  puts "Would you like to enroll in the company’s health insurance?"
  health_insurance = gets.chomp
 
-if garlic_bread == "yes" || garlic_bread == "Yes" || garlic_bread == "y" || garlic_bread == "Y"
+if garlic_bread == "yes" || garlic_bread == "Yes" || garlic_bread == "Y"
 	garlic_bread = "y"
 else
 	garlic_bread = "n"
 end
 
-if health_insurance == "yes" || health_insurance == "Yes" || health_insurance == "y" || health_insurance == "Y"
+if health_insurance == "yes" || health_insurance == "Yes" || health_insurance == "Y"
 	health_insurance = "y"
 else
 	health_insurance = "n"
 end
 
 if yob + age == 2016
-	age_correct = "true"
+	age_correct = true
 else
-	age_correct = "false"
+	age_correct = false
 end
 
-if age_correct = "true" && garlic_bread = "y"
-	puts "Probably not a vampire."
-	elsif age_correct = "false" && garlic_bread = "n"
-		puts "Probably a vampire."
-	elsif age_correct = "false" && garlic_bread = "n" && health_insurance = "n"
-		puts "Almost certainly a vampire."
-	elsif name = "Drake Cula" || name = "Tu Fang"
-		puts "Definitely a Vampire."
-	else
-		puts "Results inconclusive."
+if age_correct == true && garlic_bread == "y"
+	vampresult = "Probably not a vampire."
 end
+
+if age_correct == false && (garlic_bread == "n" || health_insurance == "n")
+	vampresult = "Probably a vampire."
+end
+
+if age_correct == false && garlic_bread == "n" && health_insurance == "n"
+	vampresult = "Almost certainly a vampire."
+end
+
+if name == "Drake Cula" || name == "Tu Fang"
+	vampresult = "Definitely a Vampire."
+end
+
+if vampresult == nil
+	vampresult = "Results inconclusive."
+end
+
+puts vampresult
+puts age_correct
+puts garlic_bread
+puts health_insurance
