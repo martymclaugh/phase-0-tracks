@@ -55,7 +55,7 @@ puts "What is your password"
 		else
 		puts "Your decrypted password is #{decrypt(password)}"
 	end
-
+exit
 
 
 
