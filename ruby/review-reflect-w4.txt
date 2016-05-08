@@ -1,0 +1,51 @@
+1. What is a variable? Why might a programmer use a variable?
+-A variable is a place holder for information. 
+-Programmers use variables so that they may change this information inside.
+
+2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
+-Ruby would read the following as the first name and the last name combined is the full name. The result would be “AbrahamLincoln”
+3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
+
+-string - words in quotations - “a string”
+-integer - numbers - 45
+-float - decimals - 5.6
+-nil - nothing -   
+-boolean - true or false
+
+4. What is an algorithm?
+- A set of steps written out to solve a problem
+
+5. What are two common categories of algorithm in computer science? 
+-Drawing
+-Psuedocoding
+
+6. What is a method? Why might a programmer choose to use a method?
+-A method is used to contain some repeatable coding in a variable
+-Coders might use methods so they can call upon the same code without having to rewrite it
+
+7. Define the following terms as they relate to a method. 
+
+-return value - what returns at the end of a method
+-side effect - when it changes a value of a variable
+-parameter - the variables a method takes in
+-argument - expression used when calling the method
+-implicit return - what is returned in ruby by default at the end of a method
+
+8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+-global scope is variables accessible from the entire program
+-method scope is only accessible to a certain instance
+-global scopes would be available all the time, where as method scopes would be specific times.
+
+9. What is control flow? Why might a programmer choose to use flow control?
+basically how you control the flow in ruby using loops, if statements, while and until.
+10. Define the following terms as they relate to flow control.
+
+loop - will go through code in a loop until specified to stop.
+if - reads as an if then statement. If blank happens then blank.
+else - reads as if none of the conditions above can happen, then this will happen:
+elsif - reads as or if
+while - a loop condition. While something is happening make this happen.
+until - another loop condition. Used to go through a set of code until a certain condition is met.
+
+
+
