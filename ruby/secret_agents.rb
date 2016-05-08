@@ -33,6 +33,7 @@ def decrypt(mess)
 	end
 	output
 end
+
 # puts encrypt("abc")
 # puts encrypt("zed")
 # puts decrypt("bcd")
@@ -44,3 +45,23 @@ end
 # -conduct requested operation
 # - print result to screen
 #-exit the program
+
+puts "Would you like your password encryted or decrypted?"
+	input1 = gets.chomp
+puts "What is your password"
+	password = gets.chomp
+	if input1 == "encrypted"
+		puts "Your encrypted password is #{encrypt(password)}"
+		else
+		puts "Your decrypted password is #{decrypt(password)}"
+	end
+
+
+
+
+
+
+
+
+
+
