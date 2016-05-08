@@ -16,7 +16,6 @@ def encrypt(message)
 		index += 1
 	end
 	message = message.gsub("ab","a")
-	puts message
 end
 
 def decrypt(mess)
@@ -32,9 +31,16 @@ def decrypt(mess)
 		end
 		i += 1
 	end
-	puts output
+	output
 end
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+# puts encrypt("abc")
+# puts encrypt("zed")
+# puts decrypt("bcd")
+# puts decrypt("afe")
+# puts decrypt(encrypt("swordfish"))
+# Our nested method call works because ruby reads the encrypt and then the decrypt due to the parentheses.
+# -ask user whether they would like to encrypt or decrypt a password
+# -ask them for the password
+# -conduct requested operation
+# - print result to screen
+#-exit the program
