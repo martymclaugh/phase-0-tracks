@@ -15,9 +15,9 @@ def encrypt(message)
 		message[index] = message[index].next
 		index += 1
 	end
+	message = message.gsub("ab","a")
 	puts message
 end
-encrypt("cab")
 
 def decrypt(mess)
 	alphabet2 = "abcdefghijklmnopqrstuvwxyz"
@@ -34,4 +34,7 @@ def decrypt(mess)
 	end
 	puts output
 end
-decrypt("dbc")
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
