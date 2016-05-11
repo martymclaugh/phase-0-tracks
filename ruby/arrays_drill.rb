@@ -26,4 +26,15 @@ end
 
 p variable1.include?("b")
 
+variable2 = Array.new
+
+variable2.push(1, 2, 3, 4, 5)
+
+p variable2
+
+variable3 = Array.new
+
+variable3.push(variable1, variable2)
+
+p variable3
 
