@@ -1,3 +1,14 @@
+def makearray(a, b, c)
+	newarray = Array.new
+	newarray.push(a, b, c)
+end
+
+def additem(array, item)
+	array << item
+end
+
+p makearray("hello", "ok", "yeah")
+
 variable1 = Array.new
 
 p variable1
@@ -38,3 +49,4 @@ variable3.push(variable1, variable2)
 
 p variable3
 
+p additem(variable3, "done")
