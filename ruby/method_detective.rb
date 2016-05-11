@@ -27,15 +27,16 @@
 "The case of the disappearing last letter".chop
 => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
-# => "he mystery of the missing first letter"
+"The mystery of the missing first letter".slice(1..40)
+=> "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
-# => "Elementary, my dear Watson!"
+"Elementary,    my   dear        Watson!".squeeze(" ")
+=> "Elementary, my dear Watson!"
 
-# "z".<???>
-# => 122 
+"z".each_byte.first
+=> 122 
 # (What is the significance of the number 122 in relation to the character z?)
+#passes through each byte and produces the number
 
-# "How many times does the letter 'a' appear in this string?".<???>
-# => 4
+"How many times does the letter 'a' appear in this string?".count("a")
+=> 4
