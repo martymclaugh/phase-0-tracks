@@ -49,11 +49,13 @@ end
 input = ""
 until input == "a girl has no name"
 	puts "What name would you like an alias for? To quit, type 'a girl has no name'"
+	puts " "
 	input = gets.chomp
 	if input == "a girl has no name"
 		break
 	end
 	puts "You will now go by #{alias_manager(input)}. Vaya con Dios."
+	puts " "
 end
-	puts "You know nothing."
+	puts "You know nothing, Jon Snow."
 
