@@ -51,3 +51,19 @@ refrigerator = {
 		lemon_juice: 1
 	}
 }
+}
+#build an hash with a mix of arrays and hashes inside
+p refrigerator
+#print hash
+p refrigerator[:top_shelf][:sauces][2]
+
+refrigerator[:second_shelf][:leftovers].push('Really Bad Indian Food')
+
+p refrigerator[:second_shelf][:leftovers]
+
+p refrigerator[:crisper_left][:vegetables][:lettuces][2].downcase
+
+refrigerator[:crisper_left][:vegetables][:cucumbers] = 2
+
+p refrigerator[:crisper_left][:vegetables][:cucumbers]
+#make multiple calls to print deeply nested data
