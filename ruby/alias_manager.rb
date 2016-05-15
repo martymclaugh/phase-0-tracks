@@ -47,15 +47,27 @@ def alias_manager(name)
 	#return new_name
 end
 input = ""
+
+all_the_names = []
+#create empty data structure to store items in
+
 until input == "a girl has no name"
+#use loop to provide a way to exit program
 	puts "What name would you like an alias for? To quit, type 'a girl has no name'"
-	puts " "
 	input = gets.chomp
+	#obtain name for translating
 	if input == "a girl has no name"
 		break
 	end
 	puts "You will now go by #{alias_manager(input)}. Vaya con Dios."
-	puts " "
+	#print name in a sentence
+	all_the_names.push("#{input} is now an assassin known as #{alias_manager(input)}")
+	#add each entry to array
+	
 end
-	puts "You know nothing, Jon Snow."
+
+puts all_the_names
+
+puts "You know nothing, Jon Snow."
+#GOT
 
