@@ -11,3 +11,10 @@ class Santa
 		puts "Initializing Santa instance ..."
 	end
 end
+
+rob = Santa.new
+
+rob.speak
+
+rob. eat_milk_and_cookies("oreo")
+
