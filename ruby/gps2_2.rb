@@ -77,11 +77,17 @@ print_list(grocery_list)
 
 # REFLECT
 # What did you learn about pseudocode from working on this challenge?
+	#  psuedocode helps breakdown challenges and makes it simple to work on smaller tasks.
 # What are the tradeoffs of using arrays and hashes for this challenge?
+	# Using an array helped split the input into different keys whereas using a hash let us assign values to those keys
 # What does a method return?
+	# A method has an implicit return unless otherwise specified
 # What kind of things can you pass into methods as arguments?
+	# any number of variables. Examples could be lists, keys, values, objects, arrays, integers, strings, etc...
 # How can you pass information between methods?
+	# by calling that method, showing an instance of a variable created inside a method, having a common variable outside of the method, calling a method inside a method
 # What concepts were solidified in this challenge, and what concepts are still confusing?
+	# Concepts that were solidified in this challenge were writing block line codes, creating methods, writing driver code, writing psuedocode. I think I should still practice a lot more with hashes and their methods to help my understanding of everything they can do.
 
 
 
