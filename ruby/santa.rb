@@ -62,24 +62,24 @@ end
 
 #DRIVER CODE
 
-5.times do santas[0].celebrate_birthday
-end
+	# 5.times do santas[0].celebrate_birthday
+	# end
 
-p santas[0].reindeer_ranking
+	# p santas[0].reindeer_ranking
 
-p santas[0].age
+	# p santas[0].age
 
-puts "Current reindeer ranking is #{santas[0].reindeer_ranking}"
+	# puts "Current reindeer ranking is #{santas[0].reindeer_ranking}"
 
-santas[0].get_mad_at = "Rudolph"
+	# santas[0].get_mad_at = "Rudolph"
 
-puts "Current reindeer ranking is #{santas[0].reindeer_ranking}"
+	# puts "Current reindeer ranking is #{santas[0].reindeer_ranking}"
 
-p santas[0].gender
+	# p santas[0].gender
 
-santas[0].gender = "female"
+	# santas[0].gender = "female"
 
-p santas[0].gender
+	# p santas[0].gender
 
 i = 0
 huge_santas = []
