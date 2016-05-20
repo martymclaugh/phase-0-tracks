@@ -8,11 +8,11 @@ class Zombie
 	# 	movement speed
 	# 	age
 
-	def initialize
+	def initialize(name)
 		puts "Initializing zombie instance..."
-		@age = 1
-		@brains_eaten = 0
-		@movement_speed = "slow"
+		@age = rand(365)
+		@brains_eaten = rand(30)
+		@movement_speed = rand("fast", "slow", "stopped")
 		@name = name
 	end
 
@@ -42,19 +42,36 @@ class Zombie
 		@brains_eaten += num_brains
 		puts "The zombie has now eaten #{brains_eaten} brains!"
 	end
+
+	def print_horde(zoms)
+		puts "Zombie's Name: #{name}"
+		puts "Zombie's Age: #{age} days"
+		puts "Zombie's Speed: #{movement_speed}"
+		puts "Brains Eaten: #{brains_eaten} brains"
+
 end
 
-random names = 
+random_names = ["Fred", "George", "Mary", "Catherine", "Jose", "Martha", "Harry", "Max", "Deanna", "Ingrid", "Valerie", "Jessica", "Ethan", "Usain Bolt"]
 
 puts "Welcome to the apocolypse, how many zombies would you like to create?"
 num_of_zombies = gets.chomp.to_i
 p num_of_zombies
 horde = []
 num_of_zombies.times do
-	horde << Zombie.new
+	horde << Zombie.new(random_names.sample)
 end
+
+if name == "Usain Bolt"
+	movement_speed = "really really fast"
+end
+
 p horde
-puts "You now have #{horde.length} zombies in your horde."
+puts "You now have #{horde.length} zombies in your horde. Type 'print' if you would like to print everything about them."
+if gets.chomp == 'print'
+	horde.each do |zombie|
+		print_horde(zombie)
+	end
+end
 
 #DRIVER CODE
 # fred = Zombie.new
