@@ -1,7 +1,7 @@
 # create a zombie class
 class Zombie
 	attr_reader :age
-	attr_accessor :brains_eaten, :movement_speed
+	attr_accessor :brains_eaten, :movement_speed, :name
 
 	# create 3 attribute classes
 	# 	brains eaten
@@ -13,6 +13,7 @@ class Zombie
 		@age = 1
 		@brains_eaten = 0
 		@movement_speed = "slow"
+		@name = name
 	end
 
 	# create 3 methods
@@ -43,32 +44,35 @@ class Zombie
 	end
 end
 
+random names = 
+
 puts "Welcome to the apocolypse, how many zombies would you like to create?"
 num_of_zombies = gets.chomp.to_i
+p num_of_zombies
 horde = []
-p num_of_zombies.times do
+num_of_zombies.times do
 	horde << Zombie.new
 end
 p horde
-puts "You now have #{}"
+puts "You now have #{horde.length} zombies in your horde."
 
 #DRIVER CODE
-fred = Zombie.new
+# fred = Zombie.new
 
-puts fred.brains_eaten
+# puts fred.brains_eaten
 
-fred.bite_appendage("head")
+# fred.bite_appendage("head")
 
-puts fred.brains_eaten
+# puts fred.brains_eaten
 
-puts fred.movement_speed
+# puts fred.movement_speed
 
-fred.survivor_spotted
+# fred.survivor_spotted
 
-puts fred.movement_speed
+# puts fred.movement_speed
 
-fred.eat_brains(12)
-fred.eat_brains(15)
+# fred.eat_brains(12)
+# fred.eat_brains(15)
 
 
 
