@@ -12,7 +12,7 @@ class Zombie
 		puts "Initializing zombie instance..."
 		@age = age
 		@brains_eaten = 0
-		@movement_speed = slow
+		@movement_speed = "slow"
 	end
 
 	# create 3 methods
@@ -25,14 +25,35 @@ class Zombie
 	# 		prints the zombie ate your brain
 
 	def bite_appendage(limb)
-		puts "The zombie has taken a bite out of your #{limb}"
+		puts "The zombie has taken a bite out of your #{limb}!"
 		if limb == "head"
-			brains_eaten += 1
+			@brains_eaten += 1
+		end
+	end
+
+	def survivor_spotted
+		@movement_speed = "fast"
 	end
 end
 
 #DRIVER CODE
 fred = Zombie.new(10)
-puts brains_eaten
+
+puts fred.brains_eaten
+
 fred.bite_appendage("head")
-puts brains_eaten
+
+puts fred.brains_eaten
+
+puts fred.movement_speed
+
+fred.survivor_spotted
+
+puts fred.movement_speed
+
+
+
+
+
+
+
