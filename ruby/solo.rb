@@ -8,7 +8,7 @@ class Zombie
 	# 	movement speed
 	# 	age
 
-	def initialize(name)
+	def initialize
 		puts "Initializing zombie instance..."
 		@age = rand(365)
 		@brains_eaten = rand(30)
@@ -44,32 +44,35 @@ class Zombie
 	end
 
 	def print_zombie(zombie)
-	puts "Zombie's Name: #{zombie.name}"
-	puts "Zombie's Age: #{zombie.age}"
-	puts "Zombie's Speed: #{zombie.movement_speed}"
-	puts "Brains Eaten: #{zombie.brains_eaten}"
-
+		zombie.each do |zom|
+			puts "Zombie's Name: #{zom.name}"
+			puts "Zombie's Age: #{zom.age} days"
+			puts "Zombie's Speed: #{zom.movement_speed}"
+			puts "Brains Eaten: #{zom.brains_eaten} brains"
+		end
 	end
 end
 
-random_names = ["Fred", "George", "Mary", "Catherine", "Jose", "Martha", "Harry", "Max", "Deanna", "Ingrid", "Valerie", "Jessica", "Ethan", "Usain Bolt"]
-
-puts "Welcome to the apocolypse, how many zombies would you like to create?"
-num_of_zombies = gets.chomp.to_i
-# p num_of_zombies
 horde = []
-num_of_zombies.times do
-	horde << Zombie.new(random_names.sample)
+input = ""
+num_of_zoms = horde.length
+index = 0
+until input == "done"
+	puts "Welcome to the Build-a-Horde workshop. Your horde currently has #{num_of_zoms} zombies."
+	puts " "
+	puts "Type the name of your next zombie or type 'done' if you are finished."
+	name_input = gets.chomp
+	if name_input == "done"
+		break
+	end
+	horde << Zombie.new
+	horde[index].name = name_input
+	p horde
+	index += 1
 end
 
-if :name == "Usain Bolt"
-	movement_speed = "really really fast"
-end
 
 
-
-puts "You now have #{horde.length} zombies in your horde."
-puts " "
 
 horde.each do |zom|
 	puts "Zombie's Name: #{zom.name}"
@@ -78,22 +81,6 @@ horde.each do |zom|
 	puts "Brains Eaten: #{zom.brains_eaten} brains"
 	puts " "
 end
-
-puts "Select a zombie in your horde to update their stats using a number from 1 to #{horde.length}"
-input = gets.chomp.to_i - 1
-print_zombie(horde[input])
-puts "Zombie's Name: #{horde[input].name}"
-puts "Zombie's Age: #{horde[input].age}"
-puts "Zombie's Speed: #{horde[input].movement_speed}"
-puts "Brains Eaten: #{horde[input].brains_eaten}"
-
-puts what would you lik
-# if input == "print"
-# 	horde.each do |x|
-# 		print_horde(x)
-# 	end
-# end
-
 
 
 #DRIVER CODE
