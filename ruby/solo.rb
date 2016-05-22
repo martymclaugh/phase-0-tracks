@@ -92,11 +92,7 @@ end
 
 
 horde.each do |zom|
-	puts "Zombie's Name: #{zom.name}"
-	puts "Zombie's Age: #{zom.age} days"
-	puts "Zombie's Speed: #{zom.movement_speed}"
-	puts "Brains Eaten: #{zom.brains_eaten} brains"
-	puts " "
+	zom.print_zombie(horde)
 end
 
 
