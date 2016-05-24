@@ -1,0 +1,27 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+
+class - objects that exist or you can create to be used in a program
+state - the collection of data, variables, and attributes
+behavior - the methods inside that class
+instance variable - local variables that are used to help set the state of a class throughout its definition
+instance method - methods called on inside a class
+
+2. What are attributes?
+properties that are either readable and/or writable (getters and setters)
+
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+Soccer ball
+I would set the attr_reader :shape since all soccer balls are round
+I would set the attr_accessor :size :color since you can get different colored and sized soccer balls
+
+4. What is the purpose of the initialize method? When does it run?
+the initialize method allows a coder to put in certain parameters need for the class.
+It runs when you create a new instance of the class.
+
+5. What are modules?
+methods that don’t have specific behavior or attributes and you don’t need multiple copies of
+
+6. What are the different ways you can use a module?
+provide organization for a method and so that one programmer wouldn’t overwrite the method of another programmer
+
+they can be written as “mixing” to help classes work better. 
