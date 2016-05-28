@@ -6,7 +6,7 @@
 	// change the return phrase variable to that phrase
 	// return the 'return phrase variable'
 var array = ["long phrase", "even longer phrase", "longest phrase ever dude"];
-var secondarray = ["11111", "2222222", "333333333333"]
+var secondarray = ["11111", "2222222", "333333333333"];
 
 function longestPhrase(list) {
 	this.list = list;
@@ -14,7 +14,7 @@ function longestPhrase(list) {
 	var longphrase;
 	for (var i = 0; i < list.length; i++) {
 		if (list[i].length > length){
-			var length = list[i].length
+			var length = list[i].length;
 			longphrase = list[i];
 		}
 	}
