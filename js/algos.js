@@ -45,11 +45,31 @@ function compareObjects(object1, object2) {
 	}
 }
 
-// DRIVER CODE
-var person = {firstName:"John", lastName:"Doe", age: 50, eyeColor:"blue"};
-var person2 = {firstName:"John", lastName:"asdf", age:26, eyeColor:"not blue"};
+function randomWords(num) {
+	this.num = num
+	var endresult = [];
+	for (var i = 0; i < num; i++) {
+    	var word = " ";
+		var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	    for( var i = 0; i < (Math.floor(Math.random() * 10)); i++ ) {
+	        word += alphabet.charAt(Math.floor(Math.random() * 26) + 1);
+	    }
+    	endresult.push(word);
+    	word = " "
+	}
+	return console.log(endresult)
+}
 
-console.log(compareObjects(person, person2))
+
+// DRIVER CODE
+randomWords(10)
+
+
+// var person = {firstName:"John", lastName:"Doe", age: 50, eyeColor:"blue"};
+// var person2 = {firstName:"John", lastName:"asdf", age:26, eyeColor:"not blue"};
+
+// console.log(compareObjects(person, person2))
+
 // var array = ["long phrase", "even longer phrase", "longest phrase ever dude"];
 // var secondarray = ["11111", "2222222", "333333333333"];
 
