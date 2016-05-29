@@ -44,18 +44,30 @@ function compareObjects(object1, object2) {
 		}
 	}
 }
-
+// random words function
 function randomWords(num) {
 	this.num = num
+	// end result array
 	var endresult = [];
+	// initial loop to create the parameters number of wors
 	for (var i = 0; i < num; i++) {
-    	var word = " ";
+		// word variable to store the word
+    	var word = "";
+    	// alphabet to choose random letter
 		var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	    for( var i = 0; i < (Math.floor(Math.random() * 10)); i++ ) {
+		// loop to create word at a random length between 1 and 10
+	    for( var i = 0; i < (Math.floor(Math.random() * 10) + 1); i++ ) {
+	    	// adds the random index of a letter in the alphabet
 	        word += alphabet.charAt(Math.floor(Math.random() * 26) + 1);
+	        // attempt to break since it goes on forever
+	        if (endresult > num) {
+    			break
+    		}
 	    }
+	    // puts word in the array
     	endresult.push(word);
-    	word = " "
+    	// resets word variable
+    	word = ""
 	}
 	return console.log(endresult)
 }
