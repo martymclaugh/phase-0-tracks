@@ -17,7 +17,7 @@ function longestPhrase(list) {
 			longphrase = list[i];
 		}
 	}
-	return longphrase
+	return console.log(longphrase);
 }
 
 // create a funtion that sees if two objects share the same key value pair.
@@ -30,23 +30,24 @@ function longestPhrase(list) {
 function compareObjects(object1, object2) {
 	for (var key in object1) {
 		var property = object1[key];
-		var one = (property + key)
+		var one = (property + key);
 		for (var key2 in object2) {
-			var property2 = object2[key2]
-			var two = (property2 + key2)
+			var property2 = object2[key2];
+			var two = (property2 + key2);
 			if (one == two){
-				return true
-				console.log("true")
+				return true;
+				console.log("true");
 			} else {
-				return false
-				console.log("false")
+				return false;
+				console.log("false");
 			}
 		}
 	}
 }
+
 // random words function
 function randomWords(num) {
-	this.num = num
+	this.num = num;
 	// end result array
 	var endresult = [];
 	// initial loop to create the parameters number of wors
@@ -56,25 +57,28 @@ function randomWords(num) {
     	// alphabet to choose random letter
 		var alphabet = "abcdefghijklmnopqrstuvwxyz";
 		// loop to create word at a random length between 1 and 10
-	    for( var i = 0; i < (Math.floor(Math.random() * 10) + 1); i++ ) {
+	    for( var index = 0; index < (Math.floor(Math.random() * 10) + 1); index++ ) {
 	    	// adds the random index of a letter in the alphabet
 	        word += alphabet.charAt(Math.floor(Math.random() * 26) + 1);
 	        // attempt to break since it goes on forever
 	        if (endresult > num) {
-    			break
+    			break;
     		}
 	    }
 	    // puts word in the array
     	endresult.push(word);
     	// resets word variable
-    	word = ""
+    	// word = ""
 	}
-	return console.log(endresult)
+	return console.log(endresult);
 }
 
 
 // DRIVER CODE
-randomWords(10)
+var times = 10;
+for(var i=0; i < times; i++){
+	longestPhrase(randomWords(10));
+}
 
 
 // var person = {firstName:"John", lastName:"Doe", age: 50, eyeColor:"blue"};
