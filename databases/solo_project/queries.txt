@@ -1,0 +1,36 @@
+Display the information in one table (either table is fine).
+	sqlite> SELECT * FROM cars;
+	1|2002|Subaru|WRX|1
+	2|2015|BMW|i8|2
+	3|2008|Chevy|Tahoe|1
+	4|2006|Honda|Civic|1
+	5|1967|Ford Mustang|Shelby|2
+Update an item that meets some condition (you can choose a condition that makes sense).
+	sqlite> UPDATE cars SET year=2008 where make="BMW";
+	sqlite> SELECT * FROM cars;
+	1|2002|Subaru|WRX|1
+	2|2008|BMW|i8|2
+	3|2008|Chevy|Tahoe|1
+	4|2006|Honda|Civic|1
+	5|1967|Ford Mustang|Shelby|2
+
+Display the information in both tables using one query.
+	sqlite> SELECT * FROM cars, dealerships WHERE cars.dealership_id = 			dealerships.id;
+	1|2002|Subaru|WRX|1|1|Sam's Super Sweet Cars
+	2|2008|BMW|i8|2|2|Dan's Dope Cars
+	3|2008|Chevy|Tahoe|1|1|Sam's Super Sweet Cars
+	4|2006|Honda|Civic|1|1|Sam's Super Sweet Cars
+	5|1967|Ford Mustang|Shelby|2|2|Dan's Dope Cars
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+	qlite> select * FROM cars, dealerships WHERE year=2008;
+	2|2008|BMW|i8|2|1|Sam's Super Sweet Cars
+	3|2008|Chevy|Tahoe|1|1|Sam's Super Sweet Cars
+	2|2008|BMW|i8|2|2|Dan's Dope Cars
+	3|2008|Chevy|Tahoe|1|2|Dan's Dope Cars
+Delete an item that meets some condition (you can choose a condition that makes sense).
+	sqlite> DELETE FROM cars WHERE make="Honda";
+	sqlite> SELECT * FROM cars;
+	1|2002|Subaru|WRX|1
+	2|2008|BMW|i8|2
+	3|2008|Chevy|Tahoe|1
+	5|1967|Ford Mustang|Shelby|2
