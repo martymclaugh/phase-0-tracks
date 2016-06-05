@@ -53,11 +53,18 @@ SQL
 def add_food(db, food, calories)
 	db.execute("INSERT INTO daily_food (food, calories) VALUES (?, ?)", [food, calories])
 end
+def print_food(food)
+	i = 1
+	food.each do |list|
+		puts "#{i}. #{list['food']} with #{list['calories']} calories."
+		i += 1
+	end
+end
 daily_bmr = ideal_bmr
 user_input1 = ""
 puts "Welcome to the Calorie Counter! When you are finished type 'done'."
 # retrieve food data from user
-until user_input1 == 'done' || 'reset'
+until user_input1 == 'done'
 	# create the table
 	db.execute(create_table)
 	puts "What have you eaten?"
@@ -77,12 +84,43 @@ until user_input1 == 'done' || 'reset'
 		puts "Uh oh! You've reached your daily calorie limit. You better go for a run!"
 	end
 end
+i = 1
+puts "This is what you have eaten today!"
+# food = db.execute("SELECT * FROM daily_food")
+# food.each do |list|
+# 	puts "#{i}. #{list['food']} with #{list['calories']} calories."
+# 	i += 1
+# end
+food = db.execute("SELECT * FROM daily_food")
+print_food(food)
+
+puts "Would you like to change anything? type  'y' or 'n'."
+user_input = gets.chomp
+
+if user_input == 'y'
+	puts "Would you like to change it or delete it? Type 'change' or 'delete'."
+	user_input = gets.chomp
+	if user_input == 'change'
+		puts "Type the food you would like to change."
+		update_row = gets.chomp
+		puts "Type the new food."
+		update_food = gets.chomp
+		puts "Type the amount of calories #{update_food} has."
+		update_calories = gets.chomp.to_i
+		db.execute("UPDATE daily_food SET food=#{update_food}, calories=#{update_calories} WHERE food=#{update_row};")
+	else
+		puts "Which number would you like to delete?"
+		delete_row = gets.chomp.to_i
+		db.execute("DELETE FROM daily_food WHERE id=#{delete_row};")
+	end
+	puts "Your updated food list!"
+	print_food(food)
+else
+	puts "You look beautiful!"
+end
 
 
 
-
-
-
-if user_input1 == 'reset'
-		db.execute("DELETE * FROM daily_food")
+# if user_input1 == 'reset'
+# 		db.execute("DELETE * FROM daily_food")
 
