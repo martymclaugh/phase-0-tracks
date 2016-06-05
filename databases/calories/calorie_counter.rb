@@ -84,43 +84,49 @@ until user_input1 == 'done'
 		puts "Uh oh! You've reached your daily calorie limit. You better go for a run!"
 	end
 end
+
 i = 1
+
 puts "This is what you have eaten today!"
-# food = db.execute("SELECT * FROM daily_food")
-# food.each do |list|
-# 	puts "#{i}. #{list['food']} with #{list['calories']} calories."
-# 	i += 1
-# end
+# print all of the entries
 food = db.execute("SELECT * FROM daily_food")
 print_food(food)
-
+# ask user if they want to change anything
 puts "Would you like to change anything? type  'y' or 'n'."
 user_input = gets.chomp
 
 if user_input == 'y'
+	# decide between change and delete
 	puts "Would you like to change it or delete it? Type 'change' or 'delete'."
 	user_input = gets.chomp
+	#  if its change gather id of item they want to change, and info they want to change it to.
 	if user_input == 'change'
-		puts "Type the food you would like to change."
+		puts "Type the number you would like to change."
 		update_row = gets.chomp
 		puts "Type the new food."
 		update_food = gets.chomp
 		puts "Type the amount of calories #{update_food} has."
 		update_calories = gets.chomp.to_i
-		db.execute("UPDATE daily_food SET food=#{update_food}, calories=#{update_calories} WHERE food=#{update_row};")
+		# use sql update code to update the row in the table.
+		db.execute("UPDATE daily_food SET food='#{update_food}', calories='#{update_calories}' WHERE id='#{update_row}';")
 	else
-		puts "Which number would you like to delete?"
-		delete_row = gets.chomp.to_i
-		db.execute("DELETE FROM daily_food WHERE id=#{delete_row};")
+		puts "Which food would you like to delete?"
+		delete_row = gets.chomp
+		# use sql delete code to delete the row.
+		db.execute("DELETE FROM daily_food WHERE food='#{delete_row}';")
 	end
-	puts "Your updated food list!"
-	print_food(food)
-else
-	puts "You look beautiful!"
 end
-
-
-
-# if user_input1 == 'reset'
-# 		db.execute("DELETE * FROM daily_food")
-
+# EXIT STATEMENT
+puts "Your food list from today!"
+# print food list
+food = db.execute("SELECT * FROM daily_food")
+print_food(food)
+# get sum of total calories from table
+total_calories = db.execute("SELECT SUM(calories) FROM 'daily_food'")[0]
+total_calories = total_calories.to_a
+sum = 0
+total_calories[1].each do |x|
+	sum += x
+end
+# print total calories.
+puts "You have eaten a total of #{sum} calories today! You look beautiful!"
