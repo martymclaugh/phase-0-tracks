@@ -131,6 +131,7 @@ end
 puts "Your food list from today!"
 
 # print food list
+food = db.execute("SELECT * FROM daily_food")
 print_food(food)
 
 # get sum of total calories from table
