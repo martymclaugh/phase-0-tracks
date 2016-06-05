@@ -145,3 +145,4 @@ end
 
 # print total calories.
 puts "You have eaten a total of #{sum} calories today with #{ideal_bmr - sum} calories left! You look beautiful!"
+db.execute("DROP TABLE daily_food")
