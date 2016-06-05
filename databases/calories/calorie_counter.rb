@@ -39,26 +39,31 @@ bmr = bmr.to_i
 #explain bmr and how many calories to eat if you are trying to lose a lb a week.
 puts "Your base metabolic rate is #{bmr}, meaning you may eat #{bmr} calories a day to maintain your same weight.\n\n"
 puts "In order to lose a pound a week (the healthiest way to lose weight is to only lose 1-2 lbs a week) you may eat only #{bmr - 500} calories a day.\n\n"
+i = 1
 
 create_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS day[i](
+  CREATE TABLE IF NOT EXISTS daily_food(
     id INTEGER PRIMARY KEY,
     food VARCHAR(255),
     calories INT
   )
 SQL
 
-def add_food(db, name, calories)
-	db.execute("INSERT INTO day[i] (food, calories) VALUES (?, ?)", [name, calories])
+def add_food(db, food, calories)
+	db.execute("INSERT INTO daily_food (food, calories) VALUES (?, ?)", [food, calories])
 end
-i = 1
-# until user_input == 'done'
-# 	db.execute(create_table)
-	puts "It is currenty day #{i}. What have you eaten? Enter the food item as 1 word and the amount of calories"
-	user_input = gets.chomp
-	user_input.split(" ")
-	puts user_input
-	add_food(db, user_input[0], user_input[1])
+db.execute(create_table)
+user_input1 = ""
+until user_input1 == 'done'
+	puts "Welcome to the Calorie Counter! What have you eaten?"
+	user_input1 = gets.chomp
+	if user_input1 == 'done'
+		break
+	end
+	puts "How many calories does #{user_input1} have?"
+	user_input2 = gets.chomp.to_i
+	add_food(db, user_input1, user_input2)
+end
 
 
 
