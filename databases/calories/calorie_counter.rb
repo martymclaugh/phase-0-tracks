@@ -47,3 +47,23 @@ create_table = <<-SQL
     calories INT
   )
 SQL
+
+def add_food(db, name, calories)
+	db.execute("INSERT INTO day[i] (food, calories) VALUES (?, ?)", [name, calories])
+end
+i = 1
+# until user_input == 'done'
+# 	db.execute(create_table)
+	puts "It is currenty day #{i}. What have you eaten? Enter the food item as 1 word and the amount of calories"
+	user_input = gets.chomp
+	user_input.split(" ")
+	puts user_input
+	add_food(db, user_input[0], user_input[1])
+
+
+
+
+
+
+
+
