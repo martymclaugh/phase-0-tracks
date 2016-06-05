@@ -5,7 +5,9 @@ require 'sqlite3'
 # Create sqlite database
 db = SQLite3::Database.new("daily_calorie.db")
 db.results_as_hash = true
+
 # UI 
+
 # obtain gender, age, height, and weight of user.
 puts "What is your gender? type 'male' or 'female'."
 gender = gets.chomp
@@ -15,15 +17,18 @@ puts "What is your height in inches?"
 height = gets.chomp.to_i
 puts "How much do you weigh in pounds?"
 weight = gets.chomp.to_i
+
 # calculate bmr based on variables given
 if gender == "female"
 	bmr = 655 + (4.35 * weight) + (height * 4.7) - (4.7 * age)
 else
 	bmr = 66 + (6.23 * weight) + (height * 12.7) - (6.8 * age)
 end
+
 # get activity level from user
 puts "How active are you? If not very active type '1'. If you do 30 - 60 minutes of easy physical activity a day type '2'. If you do 60 minutes of moderate activity type '3'. If you do at least 120 minutes of moderate activity or 60 minutes of intense activity type '4'."
 activity_level = gets.chomp
+
 # adjust bmr based on activity level
 case activity_level
 when '1'
@@ -53,6 +58,7 @@ SQL
 def add_food(db, food, calories)
 	db.execute("INSERT INTO daily_food (food, calories) VALUES (?, ?)", [food, calories])
 end
+
 def print_food(food)
 	i = 1
 	food.each do |list|
@@ -60,9 +66,11 @@ def print_food(food)
 		i += 1
 	end
 end
+
 daily_bmr = ideal_bmr
 user_input1 = ""
 puts "Welcome to the Calorie Counter! When you are finished type 'done'."
+
 # retrieve food data from user
 until user_input1 == 'done'
 	# create the table
@@ -88,9 +96,11 @@ end
 i = 1
 
 puts "This is what you have eaten today!"
+
 # print all of the entries
 food = db.execute("SELECT * FROM daily_food")
 print_food(food)
+
 # ask user if they want to change anything
 puts "Would you like to change anything? type  'y' or 'n'."
 user_input = gets.chomp
@@ -117,16 +127,20 @@ if user_input == 'y'
 	end
 end
 # EXIT STATEMENT
+
 puts "Your food list from today!"
+
 # print food list
-food = db.execute("SELECT * FROM daily_food")
 print_food(food)
+
 # get sum of total calories from table
 total_calories = db.execute("SELECT SUM(calories) FROM 'daily_food'")[0]
 total_calories = total_calories.to_a
+
 sum = 0
 total_calories[1].each do |x|
 	sum += x
 end
+
 # print total calories.
-puts "You have eaten a total of #{sum} calories today! You look beautiful!"
+puts "You have eaten a total of #{sum} calories today with #{ideal_bmr - sum} calories left! You look beautiful!"
