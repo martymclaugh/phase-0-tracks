@@ -1,3 +1,4 @@
+// make paragraphs fade out
 $(document).ready(function(){
 	$("#p1").click(function(){
 		$("#p1").fadeOut("slow");
@@ -43,5 +44,15 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$("#p8").click(function(){
 		$("#p8").fadeOut("slow");
+	});
+});
+
+// change link href
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#exlink").attr({
+			"href" : "https://www.youtube.com/watch?v=xfr64zoBTAQ",
+			"title" : "not a rick roll"
+		});
 	});
 });
