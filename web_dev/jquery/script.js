@@ -56,3 +56,14 @@ $(document).ready(function(){
 		});
 	});
 });
+
+// animate photo
+$(document).ready(function(){
+	$("img").click(function(){
+		$("img").animate({
+			left: '150px',
+			height: '50%',
+			width: '50%'
+		});
+	});
+});
