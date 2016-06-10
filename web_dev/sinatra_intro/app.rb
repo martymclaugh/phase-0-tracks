@@ -24,7 +24,7 @@ get '/:person_1/loves/:person_2' do
 end
 
 # write a GET route that retrieves
-# all student data
+# all student data.
 get '/students' do
   students = db.execute("SELECT * FROM students")
   response = ""
