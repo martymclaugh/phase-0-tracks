@@ -69,6 +69,6 @@ get '/:num1/:num2' do
 end
 
 get '/students/:name' do
-  student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])[0]
-  student.to_s
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  students.to_s
 end
