@@ -61,9 +61,14 @@ get '/goodjob' do
   end
 end
 
-get '/:num1/:num2'
+get '/:num1/:num2' do
   num1 = params[:num1].to_i
   num2 = params[:num2].to_i
   result = num1 + num2
   result.to_s
+end
+
+get '/students/:name' do
+  student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])[0]
+  student.to_s
 end
