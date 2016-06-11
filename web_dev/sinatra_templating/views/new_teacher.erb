@@ -1,1 +1,14 @@
-new_teacher.erb
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create A New Teacher</title>
+</head>
+<body>
+	<form action="/teachers" method="POST">
+		<input type="text" name="name" placeholder="Name"></input>
+		<input type="text" name="campus" placeholder="Campus"></input>
+		<input type="text" name="age" placeholder="Age"></input>
+		<button type="submit">Save</button>
+	</form>
+</body>
+</html>
